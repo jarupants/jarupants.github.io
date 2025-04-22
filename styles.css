@@ -13,11 +13,7 @@
     /*  */
     margin-bottom: 0px;
     /*  */
-    scrollbar-color: #009A7E;
-    scrollbar-gutter: 40px;
-    scrollbar-base-color: #FFFEEE;
-    scrollbar-face-color: #FFFEEE;
-    scrollbar-width: thin;
+    
 }
 
 .root-container {
@@ -32,6 +28,14 @@
     
 }
 
+body {
+    /* no background gradient */
+    height: 100dvh;
+    overflow: hidden;
+    background: radial-gradient(circle at center 80%, #F22828 0%, #F22828 17%, #FF574C 35%, #FF6969 44%, #FFF8F1 75%);
+    background-repeat: no-repeat;
+}
+
 .root-hbox {
     display: flex;
     flex-direction: row;
@@ -39,24 +43,20 @@
     width: fit-content;
 }
 
-body {
-    height: 100dvh;
-    overflow: hidden;
-    background: radial-gradient(circle at center 80%, #F22828 0%, #F22828 17%, #FF574C 35%, #FF6969 44%, #FFF8F1 75%);
-    background-repeat: no-repeat;
-}
-
 .vbox {
+    /* no styling */
     display: flex;
     flex-direction: column;
 }
 
 .hbox {
+    /* no styling */
     display: flex;
     flex-direction: row;
 }
 
 .wrapbox {
+    /* no styling */
     display: flex;
     flex-flow: row wrap;
 }
@@ -232,10 +232,85 @@ p {
     margin-bottom: 0px;
 }
 
+a {
+    color:#FF574C;
+    font-size: 14px;
+    text-decoration: none;
+}
+
 li {
     margin-left: 20px;
 }
 
 p.footer {
-    line-height: 3px;
+    line-height: 0em;
 }
+
+/* ----------------------------- project formatting / styling ----------------------------- */
+
+div.project {
+    display: flex;
+    flex-direction: column;
+    background: #FFFEEE;
+    /*  */
+    width: fit-content;
+    height: max-content;
+    /*  */
+    border: 1.3px;
+    border-style: solid;
+    border-color: #009A7E;
+    /*  */
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    /*  */
+    margin-top: -1px;
+    margin-left: -1px;
+    margin-right: -1px;
+    /*  */
+    cursor: pointer;
+}
+
+img.project {
+    border-radius: 0;
+}
+
+h3.project {
+    text-align: center;
+    margin-top: 5px;
+}
+
+p#project-title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ----------------------------- scrollbar styling ----------------------------- */
+
+/*! Firefox */    
+    html{
+
+        scrollbar-color: #FFFEEE #009A7E;
+    }
+
+/*! Other Browser */
+
+    html {
+        --scrollbarBG: #FFFEEE;
+        --thumbBG: #009A7E;
+    }
+    body::-webkit-scrollbar {
+        width: 8px;
+    }
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    }
+    body::-webkit-scrollbar-track {
+        background: var(--scrollbarBG);
+    }
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--thumbBG) ;
+        /* border-radius: 6px; */
+        border: 3px solid var(--scrollbarBG);
+    }
