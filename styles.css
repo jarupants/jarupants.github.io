@@ -1,0 +1,241 @@
+/* style.css */
+
+/*  */
+/* ----------------------------- container formatting ----------------------------- */
+/*  */
+
+* {
+    color: #009A7E;
+    /*  */
+    font-family: 'DM Sans', 'Space Mono', sans-serif;
+    font-size: 14px;
+    font-weight:500;
+    /*  */
+    margin-bottom: 0px;
+    /*  */
+    scrollbar-color: #009A7E;
+    scrollbar-gutter: 40px;
+    scrollbar-base-color: #FFFEEE;
+    scrollbar-face-color: #FFFEEE;
+    scrollbar-width: thin;
+}
+
+.root-container {
+    display: flex;
+    height: 75dvh;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+    /*  */
+    padding: 10dvh;
+    padding-top: 11dvh;
+    
+}
+
+.root-hbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: fit-content;
+}
+
+body {
+    height: 100dvh;
+    overflow: hidden;
+    background: radial-gradient(circle at center 80%, #F22828 0%, #F22828 17%, #FF574C 35%, #FF6969 44%, #FFF8F1 75%);
+    background-repeat: no-repeat;
+}
+
+.vbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.hbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapbox {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: #FFFEEE;
+    /*  */
+    border: 1.3px;
+    border-style: solid;
+    border-color: #009A7E;
+    /*  */
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    /*  */
+    margin-top: -1px;
+    margin-left: -1px;
+}
+
+#menu-bar {
+    min-width: 500px;
+    max-width: 500px;
+    height: inherit;
+}
+
+#footer {
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+}
+
+/*  */
+/* ----------------------------- button formatting ----------------------------- */
+/*  */
+
+button.menu {
+    background: #FFFEEE;
+    min-width: 100px;
+    flex: 1;
+    /*  */
+    border: 1.3px;
+    border-style: solid;
+    border-color: #009A7E;
+    /*  */
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -1px;
+    margin-left: -1px;
+    /*  */
+    font-size: 18px;
+    font-weight: 600;
+    /*  */
+    cursor: pointer;
+    /*  */
+}
+
+button:hover {
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.7s;
+    background-color: #009A7E;
+    color: #FFFEEE;
+}
+
+button:active {
+    background-color: #04635d;
+    border-color: #04635d;
+    color: #FFFEEE;
+}
+
+button.on {
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.7s;
+    min-width: 100px;
+    flex: 1;
+    /*  */
+    border: 1.3px;
+    border-style: solid;
+    border-color: #009A7E;
+    /*  */
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -1px;
+    margin-left: -1px;
+    /*  */
+    font-size: 18px;
+    font-weight: 600;
+    /*  */
+    cursor: pointer;
+    /*  */
+    background-color: #009A7E;
+    color: #FFFEEE;
+}
+
+/* button: replace this with js toggle state{
+    background-color: #FF574C;
+    border-color: #FF574C;
+    color: #FFFEEE;
+} */
+
+/*  */
+/* ----------------------------- sidebar formatting ----------------------------- */
+/*  */
+
+.about-sidebar {
+    display: none;
+    scroll-behavior: smooth;
+    flex-direction: column;
+    min-height: max-content;
+    overflow-x: wrap;
+}
+
+#resume-sidebar {
+    display: none;
+    flex-direction: column;
+    height: auto;
+    min-width: 40dvw;
+    max-height: 60dvh;
+    overflow-y: scroll;
+    overflow-x: wrap;
+
+}
+
+/*  */
+/* ----------------------------- content formatting ----------------------------- */
+/*  */
+
+
+img {
+    border: 1.3px;
+    border-style: solid;
+    border-color: #009A7E;
+    border-radius: 100px;
+    /*  */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /*  */
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: .6em;
+    kerning: -1.5rem;
+    /*  */
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: .6em;
+    /*  */
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight:600;
+    line-height: .4em;
+    /*  */
+    margin-bottom: 0px;
+}
+
+p {
+    font-size: 14px;
+    font-weight:500;
+    /*  */
+    margin-bottom: 0px;
+}
+
+li {
+    margin-left: 20px;
+}
+
+p.footer {
+    line-height: 3px;
+}
