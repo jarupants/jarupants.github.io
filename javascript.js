@@ -128,6 +128,7 @@ menuButton.addEventListener("click", setSidebarState);
 // Home reset
 
 function setHomeState() {
+
     if (isHomeActive == true || isHomeActivatable == true) {
     changeGradient("home");
     homeButton.className = "on";
@@ -137,7 +138,13 @@ function setHomeState() {
     setAboutHeight();
     setSidebarWidth();
     isHomeActivatable = false;
+
+    if (isHomeActivatable == true) {
+        isHomeActive = true;
     }
+    
+    }
+
 }
 
 homeButton.addEventListener("click", setHomeState);
