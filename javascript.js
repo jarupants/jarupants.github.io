@@ -38,6 +38,7 @@ var title3 = document.querySelector("#titleline3");
 let isAboutActive = false;
 let isSidebarActive = false;
 let isHomeActive = false;
+let isHomeActivatable = false;
 
 function setHomeButtonOnLoad() {
     homeButton.className = "on";
@@ -85,6 +86,8 @@ function setAboutState() {
 
         isHomeActive = !isAboutActive;
         setHomeState();
+
+        isHomeActivatable = !isHomeActive;
 }
 
 aboutButton.addEventListener("click", setAboutState);
@@ -115,6 +118,8 @@ function setSidebarState() {
 
     isHomeActive = !isSidebarActive;
     setHomeState();
+
+    isHomeActivatable = !isHomeActive;
 }
 
 menuButton.addEventListener("click", setSidebarState);
@@ -123,7 +128,7 @@ menuButton.addEventListener("click", setSidebarState);
 // Home reset
 
 function setHomeState() {
-    if (isHomeActive == true) {
+    if (isHomeActive == true || isHomeActivatable == true) {
     changeGradient("home");
     homeButton.className = "on";
     console.log(isHomeActive);
@@ -131,6 +136,7 @@ function setHomeState() {
     isSidebarActive = false;
     setAboutHeight();
     setSidebarWidth();
+    isHomeActivatable = false;
     }
 }
 
