@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", setHomeButtonOnLoad);
 
 function setActive(Object) {
     isHomeActive = false;
-    // setHomeState();
     Object.toggleAttribute("active");
     Object.style.display = "flex";
 }
@@ -79,12 +78,12 @@ function setAboutHeight() {
 function setAboutState() {
         isAboutActive = !isAboutActive;
         setAboutHeight();
-        console.log(isAboutActive);
     
         isSidebarActive = false;
         setSidebarWidth();
 
         isHomeActive = !isAboutActive;
+        isHomeActivatable = false;
         setHomeState();
 
         isHomeActivatable = !isHomeActive;
@@ -111,12 +110,12 @@ function setSidebarWidth() {
 function setSidebarState() {
     isSidebarActive = !isSidebarActive;
     setSidebarWidth();
-    console.log(isSidebarActive);
 
     isAboutActive = false;
     setAboutHeight();
 
     isHomeActive = !isSidebarActive;
+    isHomeActivatable = false;
     setHomeState();
 
     isHomeActivatable = !isHomeActive;
@@ -128,24 +127,36 @@ menuButton.addEventListener("click", setSidebarState);
 // Home reset
 
 function setHomeState() {
+    
+    if (isHomeActive == true) {
 
-    if (isHomeActive == true || isHomeActivatable == true) {
     changeGradient("home");
     homeButton.className = "on";
-    console.log(isHomeActive);
+
     isAboutActive = false;
     isSidebarActive = false;
+
     setAboutHeight();
     setSidebarWidth();
+
     isHomeActivatable = false;
 
-    if (isHomeActivatable == true) {
-        isHomeActive = true;
-    }
-    
-    }
+    } else if (isHomeActivatable == true) {
 
+        isHomeActive = true;
+
+        changeGradient("home");
+        homeButton.className = "on";
+
+        isAboutActive = false;
+        isSidebarActive = false;
+
+        setAboutHeight();
+        setSidebarWidth();
+
+        isHomeActivatable = false;
+    }
 }
 
-homeButton.addEventListener("click", setHomeState);
+homeButton.addEventListener("click", setHomeState,);
 
