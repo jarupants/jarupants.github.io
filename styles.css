@@ -36,6 +36,10 @@ body {
     background-repeat: no-repeat;
 }
 
+body:where(#resume-sidebar, #work-sidebar, .about-sidebar) {
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.7s;
+}
 .root-hbox {
     display: flex;
     flex-direction: row;
@@ -59,6 +63,8 @@ body {
     /* no styling */
     display: flex;
     flex-flow: row wrap;
+    flex: 1;
+    align-content: stretch;
 }
 
 .container {
@@ -165,7 +171,12 @@ button.on {
 /* ----------------------------- sidebar formatting ----------------------------- */
 /*  */
 
-.about-sidebar {
+#sidebar-container {
+    display:none;
+    min-width: fit-content;
+}
+
+.about {
     display: none;
     scroll-behavior: smooth;
     flex-direction: column;
@@ -173,15 +184,17 @@ button.on {
     overflow-x: wrap;
 }
 
-#resume-sidebar {
+#resume {
     display: none;
     flex-direction: column;
     height: auto;
-    min-width: 40dvw;
     max-height: 60dvh;
     overflow-y: scroll;
     overflow-x: wrap;
+}
 
+#work {
+    display: none;
 }
 
 /*  */
@@ -254,8 +267,8 @@ div.project {
     background: #FFFEEE;
     /*  */
     width: 100px;
-    height: max-content;
     max-width: 100px;
+    height: 210px;
     /*  */
     border: 1.3px;
     border-style: solid;
@@ -265,15 +278,12 @@ div.project {
     padding-top: 0px;
     padding-bottom: 15px;
     /*  */
-    margin-top: -0.5px;
-    margin-left: -1px;
-    margin-right: -1px;
-    margin-bottom: -0.5px;
+    margin: -1px;
     /*  */
     cursor: pointer;
     /*  */
     align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 div.project:hover {
