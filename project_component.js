@@ -1,46 +1,19 @@
-// project.js
+const projectArray = [
+    { title: 'Project', role: 'UX' },
+    { title: 'Project2', role: 'UX2' },
+]
 
-document.addEventListener('alpine:init', () => {
-    Alpine.data('app', () => ({
-        projects:[
-        {title:"2XKO Progression", role:"UX"},
-        {title:"2XKO Player Profile", role:"UX | Implementation"},
-        ]
-    }))
-});
-
-class ProjectView extends HTMLElement {
-
-    constructor() {
-        super();
-        this.title = '';
-        this.role = '';
-    };
-
+class Project extends HTMLElement {
     connectedCallback() {
-
-        if (this.hasAttribute('title')) this.title = this.getAttribute('name');
-        if (this.hasAttribute('role')) this.role = this.getAttribute('role');
-        this.render();
-    };
-
-    render() {
-        this.innerHTML = `
-            <div class="project">
-                <img class="project"src="./images/meee.png" width="100" height="100">
-                <h3 class="project" x-text="${this.title}"></h3>
-                <p id="project-title" x-text="${this.role}"></p>
-            </div>
+            this.innerHTML = `
+        <div class="project">
+            <img class="project"src="./images/meee.png" width="100" height="100">
+            <h3 class="project">I'm title</h3>
+            <p id="project-title">I'm role</p>
+        </div> 
         `;
-    };
+        }
+    }
 
-    static get observedAttributes() { return ['title', 'role']; }
-
-	attributeChangedCallback(title, oldValue, newValue) {
-		this[title] = newValue;
-		this.render();
-	}
+customElements.define('project-item', Project);
     
-};
-
-if(!customElements.get('project-view')) customElements.define('project-view', ProjectView);

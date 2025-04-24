@@ -6,7 +6,8 @@
     <title>yes girl</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="project_component.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./project_component.js" type="text/javascript" defer></script>
 </head>
 <body>
     <div class="root-container">
@@ -157,18 +158,12 @@
             </div>
 
             <!-- Work -->
+            
+            <!-- Work - UI -->
 
-             <!-- actual panel -->
-
-            <!-- <div class="container" style="padding: 0px; min-width:400px; max-width:568px; min-height: fill;">
+            <!-- <div class="container" style="padding: 0px; width: 419px; min-height: fill;">
                 <div class="wrapbox">
-                    <div x-data="app">
-                        <template x-for="project in projects">
-                            <p>
-                                <project-view :title="project.title" :role="project.role"></project-view>
-                            </p>
-                        </template>
-                     </div>
+                    <project-item></project-item>
                 </div>
             </div> -->
 
