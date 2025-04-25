@@ -29,17 +29,20 @@
 }
 
 body {
-    /* no background gradient */
+
+    /* gradient variable values */
+
+    --gradColor1: #F22828;
+    --gradColor2: #F22828;
+    --gradColor3: #FF574C;
+    --gradColor4: #FF6969;
+
     height: 100dvh;
     overflow: hidden;
-    background: radial-gradient(circle at center 80%, #F22828 0%, #F22828 17%, #FF574C 35%, #FF6969 44%, #FFF8F1 75%);
+    background: radial-gradient(circle at center 80%, var(--gradColor1) 0%, var(--gradColor2) 17%, var(--gradColor3) 35%, var(--gradColor4) 44%, #FFF8F1 75%);
     background-repeat: no-repeat;
 }
 
-body:where(#resume-sidebar, #work-sidebar, .about-sidebar) {
-    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition-duration: 0.7s;
-}
 .root-hbox {
     display: flex;
     flex-direction: row;
@@ -124,21 +127,22 @@ button.menu {
 }
 
 button:hover {
-    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition-duration: 0.7s;
+    transition:cubic-bezier(0.34, 0.82, 0.165, 1);
+    transition-duration: 0.55s;
     background-color: #009A7E;
     color: #FFFEEE;
 }
 
 button:active {
+    transition-duration: 0.1s;
     background-color: #04635d;
     border-color: #04635d;
     color: #FFFEEE;
 }
 
 button.on {
-    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition-duration: 0.7s;
+    transition:cubic-bezier(0.34, 0.82, 0.165, 1);
+    transition-duration: 0.55s;
     min-width: 100px;
     flex: 1;
     /*  */

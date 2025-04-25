@@ -1,6 +1,6 @@
-// javascript.js
+// Variables ---------------------------------------------------------------------------------
 
-// About active toggle
+
 
 var aboutButton = document.querySelector("#aboutButton");
 var aboutList = document.querySelectorAll("#about");
@@ -24,33 +24,59 @@ let isSidebarActive = false;
 let isHomeActive = false;
 let isHomeActivatable = false;
 
-// Gradient change
+
+
+// Gradient change ---------------------------------------------------------------------------------
+
+
 
 function changeGradient(category) {
-    var bgGradient = document.querySelector('body');
+
+    var bg = document.querySelector('body');
+
     switch(category) {
         case "home":
-            bgGradient.style.background = "radial-gradient(circle at center 80%, rgba(242,40,40,1.0) 0%, rgba(242,40,40,1.0) 17%, rgba(255,87,76,1.0) 35%, rgba(255,105,105,1.0) 44%, rgba(255,248,241,1.0) 75%) no-repeat";
+            bg.style.setProperty('--gradColor1', 'rgba(242,40,40,1.0)');
+            bg.style.setProperty('--gradColor2', 'rgba(242,40,40,1.0)');
+            bg.style.setProperty('--gradColor3', 'rgba(255,87,76,1.0)');
+            bg.style.setProperty('--gradColor4', 'rgba(255,105,105,1.0)');
             console.log("home");
             break;
         case "work":
-            bgGradient.style.background = "radial-gradient(circle at center 80%, rgba(250,65,145,1.0) 0%, rgba(254,79,155,1.0) 17%, rgba(255,115,159,1.0) 35%, rgba(255,137,167,1.0) 44%, rgba(255,248,241,1.0) 75%) no-repeat";
-            console.log("about");
+            bg.style.setProperty('--gradColor1', 'rgba(250,65,145,1.0)');
+            bg.style.setProperty('--gradColor2', 'rgba(254,79,155,1.0)');
+            bg.style.setProperty('--gradColor3', 'rgba(255,115,159,1.0)');
+            bg.style.setProperty('--gradColor4', 'rgba(255,137,167,1.0)');
+            console.log("work");
             break;
         case "resume":
-            bgGradient.style.background = "radial-gradient(circle at center 80%, rgba(56,40,242,1.0) 0%, rgba(129,40,242,1.0) 17%, rgba(176,76,255,1.0) 35%, rgba(198,105,255,1.0) 44%, rgba(255,248,241,1.0) 75%) no-repeat";
+            bg.style.setProperty('--gradColor1', 'rgba(56,40,242,1.0)');
+            bg.style.setProperty('--gradColor2', 'rgba(129,40,242,1.0)');
+            bg.style.setProperty('--gradColor3', 'rgba(176,76,255,1.0)');
+            bg.style.setProperty('--gradColor4', 'rgba(198,105,255,1.0)');
             console.log("resume");
             break;
         case "about":
-            bgGradient.style.background = "radial-gradient(circle at center 80%, rgba(242,125,40,1.0) 0%, rgba(242,149,40,1.0) 17%, rgba(255,162,76,1.0) 35%, rgba(255,177,105,1.0) 44%, rgba(255,248,241,1.0) 75%) no-repeat";
+            bg.style.setProperty('--gradColor1', 'rgba(242,125,40,1.0)');
+            bg.style.setProperty('--gradColor2', 'rgba(242,149,40,1.0)');
+            bg.style.setProperty('--gradColor3', 'rgba(255,162,76,1.0)');
+            bg.style.setProperty('--gradColor4', 'rgba(255,177,105,1.0)');
             console.log("about");
             break;
         default:
-            bgGradient.style.background = "radial-gradient(circle at center 80%, rgba(242,40,40,1.0) 0%, rgba(242,40,40,1.0) 17%, rgba(255,87,76,1.0) 35%, rgba(255,105,105,1.0) 44%, rgba(255,248,241,1.0) 75%) no-repeat";
+            bg.style.setProperty('--gradColor1', 'rgba(242,40,40,1.0)');
+            bg.style.setProperty('--gradColor2', 'rgba(242,40,40,1.0)');
+            bg.style.setProperty('--gradColor3', 'rgba(255,87,76,1.0)');
+            bg.style.setProperty('--gradColor4', 'rgba(255,105,105,1.0)');
             console.log("default");
             break;
     }
 }
+
+
+
+// Home button state on load ---------------------------------------------------------------------------------
+
 
 
 function setHomeButtonOnLoad() {
@@ -58,6 +84,12 @@ function setHomeButtonOnLoad() {
 }
 
 document.addEventListener("DOMContentLoaded", setHomeButtonOnLoad);
+
+
+
+// Active toggle ---------------------------------------------------------------------------------
+
+
 
 function setActive(Object) {
 
@@ -109,7 +141,11 @@ function setAboutState() {
 
 aboutButton.addEventListener("click", setAboutState);
 
-// Sidebar active toggle
+
+
+// Sidebar active toggle ---------------------------------------------------------------------------------
+
+
 
 function setSidebarWidth() {
 
@@ -171,24 +207,25 @@ function setSidebarState() {
 
 function setActivePage(page) {
     activePage = page;
-    console.log(activePage);
 }
 
 resumeButton.addEventListener("click", function() {
     setActivePage("resume");
     isSidebarActive = true;
     setSidebarState();
-    console.log("resume");
     });
 
 workButton.addEventListener("click", function() {
     setActivePage("work");
     isSidebarActive = true;
     setSidebarState();
-    console.log("work");
     });  
 
-// Home reset
+
+    
+// Home reset ---------------------------------------------------------------------------------
+
+
 
 function setHomeState() {
     
